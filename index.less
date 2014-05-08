@@ -1,0 +1,97 @@
+@import url('http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic');
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Gochi+Hand);
+
+body {
+    //background: url('graf.jpg');
+    background-size:cover;
+
+}
+h1 {
+    font-family:'Exo 2', sans-serif;;
+    font-weight:900;
+    font-size: 100px;
+    letter-spacing: -3px;
+}
+h3 {
+    font-family:'Exo 2', sans-serif;;
+    font-weight:500;
+    font-size: 40px;
+    letter-spacing: -2px;
+}
+
+#imageFeed {
+    background:#000;
+    opacity:0.5;
+
+    & > .imageItem {
+        display:inline-block;
+    }
+}
+
+
+
+article {
+
+    &:hover {
+        ._opacOut();
+    }
+    ._opacIn();
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight:300;
+    border: 1px solid #eee;
+    margin:20px 100px;
+    padding:20px;
+    background-color:#eee;
+
+    & > * {
+
+    }
+    & > h3 {
+        color:#444;
+        font-family: 'Gochi Hand', cursive;
+        //font-weight:600;
+        font-size: 40px;
+        letter-spacing: 1px;
+    }
+    & > img {
+
+    }
+
+    & > p {
+        padding:10px;
+        line-height:1.3em;
+    }
+}
+
+
+
+@animationSpeed: 0.2s;
+._opacIn() {
+    opacity:0.9;
+    background-color:#eee;
+
+    animation: opacOut @animationSpeed;
+    -webkit-animation: opacOut @animationSpeed;
+}
+._opacOut() {
+    opacity:1;
+    background-color:#fff;
+
+    animation: opacIn @animationSpeed;
+    -webkit-animation: opacIn @animationSpeed;
+}
+.opacIn() {
+    from { ._opacIn(); }
+    to { ._opacOut(); }
+}
+.opacOut() {
+    from { ._opacOut(); }
+    to { ._opacIn(); }
+}
+@keyframes opacIn { .opacIn(); }
+@-webkit-keyframes opacIn  { .opacIn(); }
+
+@keyframes opacOut { .opacOut(); }
+@-webkit-keyframes opacOut  { .opacOut(); }

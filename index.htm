@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Waldell.se</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+
+        <!-- LESS -->
+        <link rel="stylesheet" type="text/css" href="index.css" />
+
+        <!-- JS -->
+        <script type="application/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+        <script type="application/javascript" src="jQuery.dataBind.js"></script>
+
+        <script type="application/javascript">
+
+
+
+            $(document).on('ready', function() {
+
+                $.getJSON('data.json', function(data) {
+
+                    var articles = data.articles;
+                    $('#articleList').dataBind(articles);
+
+
+
+
+                });
+
+
+            });
+
+
+
+
+        </script>
+    </head>
+    <body>
+
+<!--
+        <h1>&nbsp;</h1>
+        <h3>&nbsp;</h3>
+-->
+
+
+
+        <div id="imageFeed">
+        </div>
+
+        <section id="articleList">
+
+            <article>
+                <h3 data-item="title"></h3>
+                <span data-item="timestamp" data-formatter="datetime"></span>
+                <p data-item="text"></p>
+            </article>
+
+        </section>
+
+
+
+
+
+    </body>
+</html>
